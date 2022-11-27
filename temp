@@ -1,0 +1,81 @@
+<h1 id="hetop">WELCOME ADMIN</h1>
+ <!-- Side navigation -->
+<div class="sidenav">
+
+  <a onclick="myFunction()">Add course</a>
+  <a onclick="myFunction()">Student Request</a>
+  <a onclick="myFunction()">NOTIFICATION</a>
+	<a onclick="myFunction2()">COURSE</a>  
+	<a onclick="myFunction()">LOGOUT</a>
+</div>
+
+<!-- Page content -->
+<div id="main">
+
+	 <div class="container">
+  <form action="createcourse.php" method="post">
+
+    <label for="fname">Course code</label>
+    <input type="text" id="cid" name="cid" placeholder="Eg. CSD13..">
+
+    <label for="lname">course Name</label>
+    <input type="text" id="cname" name="cname" placeholder="Eg. Database management system..">
+
+    <label for="department">department</label>
+    <select id="department" name="department">
+      <option value="CSE" >COMPUTER SCIENCE DEPARTMENT</option>
+      <option value="CE" >CIVIL</option>
+      <option value="ME" >MECHANICAL</option>
+<option value="ECE">ELECTRONICS</option>
+<option value="CHEMICAL">CHEMICAL</option>
+    </select>
+
+    
+
+    <input type="submit" value="Submit">
+	
+
+  </form>
+</div> 
+
+
+</div> 
+<div id="main2">
+	<?php
+		include 'config.php';
+		$sql="SELECT * FROM course";
+		$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	echo "<table>"; // start a table tag in the HTML
+
+while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
+echo "<tr><td>" . $row['course_id'] . "</td><td>" . $row['course_name'] . "</td></tr>";  //$row['index'] the index here is a field name
+}
+
+echo "</table>";
+	?>
+	
+</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("main");
+var prev=document.getElementById("main2");
+if(prev.style.display==="block")
+ prev.style.display="none";
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+function myFunction2() {
+  var x = document.getElementById("main2");
+  var prev=document.getElementById("main");
+if(prev.style.display==="block")
+ prev.style.display="none";
+if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+</script>

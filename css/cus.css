@@ -1,0 +1,16 @@
+.toplog{
+	position: relative;
+float: left;
+
+
+}
+#imglog{
+	position: absolute;
+	width: 15%;
+	height: 100%;
+	margin-left:5%;
+}
+#toptext{
+	
+	margin-left: 200px;
+}

@@ -1,0 +1,29 @@
+.toplog{
+	float: left;
+
+}
+#imglog{
+	position: absolute;
+	width: 15%;
+	height: 20%;
+}
+#toptext{
+	position: absolute;
+	margin-left: 200px;
+}
+#frm{
+	position: absolute;
+	margin-top: 20%;
+	margin-left: 30%;
+	font-size: 18px;
+	
+	height: 80%;
+
+}
+#formcolor{
+	background-color: #5499c7;
+	
+}
+#fronttop{
+	text-align: center;
+}
